@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'WHCustomizeConstraint_Example' do
+  pod 'WHCustomizeConstraint', :path => '../'
+
+  target 'WHCustomizeConstraint_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
