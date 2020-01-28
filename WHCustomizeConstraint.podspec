@@ -24,11 +24,11 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/wajahathassan64/WHCustomizeConstraint'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'wajahathassan64' => 'wajahat@digitify.com' }
+  s.author           = { 'wajahathassan64' => 'wajahathassan64@gmail.com' }
   s.source           = { :git => 'https://github.com/wajahathassan64/WHCustomizeConstraint.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.4'
 
   s.source_files = 'WHCustomizeConstraint/Classes/**/*'
   
