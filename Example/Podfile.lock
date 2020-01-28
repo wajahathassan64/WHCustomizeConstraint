@@ -1,0 +1,16 @@
+PODS:
+  - WHCustomizeConstraint (0.1.0)
+
+DEPENDENCIES:
+  - WHCustomizeConstraint (from `../`)
+
+EXTERNAL SOURCES:
+  WHCustomizeConstraint:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  WHCustomizeConstraint: 6a0c3ad36f40cc6c822218c12c2a32a4be5b27c3
+
+PODFILE CHECKSUM: 3cdce48deb05d11fa423b01c1a1bd11f231cf984
+
+COCOAPODS: 1.8.4

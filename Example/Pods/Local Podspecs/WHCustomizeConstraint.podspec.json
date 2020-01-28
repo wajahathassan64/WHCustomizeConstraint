@@ -1,0 +1,22 @@
+{
+  "name": "WHCustomizeConstraint",
+  "version": "0.1.0",
+  "summary": "A short description of WHCustomizeConstraint.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/wajahathassan64/WHCustomizeConstraint",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "wajahathassan64": "wajahat@digitify.com"
+  },
+  "source": {
+    "git": "https://github.com/wajahathassan64/WHCustomizeConstraint.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "WHCustomizeConstraint/Classes/**/*"
+}

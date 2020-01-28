@@ -1,0 +1,6 @@
+framework module Pods_WHCustomizeConstraint_Tests {
+  umbrella header "Pods-WHCustomizeConstraint_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

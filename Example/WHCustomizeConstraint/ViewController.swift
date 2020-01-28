@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import WHCustomizeConstraint
 
 class ViewController: UIViewController {
 
+    private lazy var testLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        testLabel.alignAllEdgesWithSuperview()
     }
 
     override func didReceiveMemoryWarning() {
