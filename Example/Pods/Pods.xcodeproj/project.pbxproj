@@ -104,8 +104,7 @@
 		266452EB29DD184F86BA6F74A92BD4D5 /* WHCustomizeConstraint */ = {
 			isa = PBXGroup;
 			children = (
-				641A088C23E0BC60004A899E /* YAPLayout.swift */,
-				641A088D23E0BC60004A899E /* YAPLayoutAttributes.swift */,
+				641A089023E0BFD4004A899E /* Source */,
 				E817949C754606773651FC70E06AEDE1 /* Pod */,
 				CCD522BEF0840D2D17328D573617BBC7 /* Support Files */,
 			);
@@ -137,6 +136,15 @@
 				B7A515E2BECF4DB30DD2E2804A82A20D /* WHCustomizeConstraint.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		641A089023E0BFD4004A899E /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				641A088C23E0BC60004A899E /* YAPLayout.swift */,
+				641A088D23E0BC60004A899E /* YAPLayoutAttributes.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		9352F40D90B16B4FAF5784A952D04B18 /* Pods-WHCustomizeConstraint_Example */ = {
@@ -330,6 +338,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 39DF5A5EC87841766EDC986313FD64FF /* Products */;
@@ -438,7 +447,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -693,7 +702,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
