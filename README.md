@@ -22,7 +22,7 @@ pod 'WHCustomizeConstraint'
 
 ## Author
 
-wajahathassan64, wajahat@digitify.com
+wajahathassan64, wajahathassan64@gmail.com
 
 ## License
 
