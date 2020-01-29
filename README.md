@@ -25,12 +25,14 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 Attaching any `UI component` to its superview with `NSLayoutConstraint`:
 
-`NSLayoutConstraint.activate([
+```ruby
+NSLayoutConstraint.activate([
     view.topAnchor.constraint(equalTo: superview.topAnchor, constant: 0),
     view.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: 0),
     view.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: 0),
     view.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: 0)
-])`
+])
+```
 
 with `TinyConstraints`:
 
