@@ -19,7 +19,26 @@
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, clone the repo, and run `pod install` from the Example directory. Further more here are some usefull example describe below.
+
+## Align Edges
+
+Attaching any `UI component` to its superview with `NSLayoutConstraint`:
+
+`NSLayoutConstraint.activate([
+    view.topAnchor.constraint(equalTo: superview.topAnchor, constant: 0),
+    view.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: 0),
+    view.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: 0),
+    view.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: 0)
+])`
+
+with `TinyConstraints`:
+
+`view.edgesToSuperView()`
+
+or:
+
+`view.edgesToSuperView(insets: .top(10) + .left(10))`
 
 ## Requirements
 
