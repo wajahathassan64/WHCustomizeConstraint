@@ -58,6 +58,19 @@ view.alignEdgesWithSuperview([.left, .right, .top, .bottom], constants: [0,0,0,0
 
 Keeping a view`(`UI-component`)` to the center of its superview with `NSLayoutConstraint`:
 
+```ruby
+NSLayoutConstraint.activate([
+    view.centerXAnchor.constraint(equalTo: superview.centerXAnchor, constant: 0)
+    view.centerYAnchor.constraint(equalTo: superview.centerYAnchor, constant: 0)
+])
+```
+
+with `WHCustomizeConstraint`:
+
+```ruby
+view.centerInSuperView()
+```
+
 ## Author
 
 wajahathassan64, wajahathassan64@gmail.com
