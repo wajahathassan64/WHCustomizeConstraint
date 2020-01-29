@@ -5,11 +5,17 @@
 [![License](https://img.shields.io/cocoapods/l/WHCustomizeConstraint.svg?style=flat)](https://cocoapods.org/pods/WHCustomizeConstraint)
 [![Platform](https://img.shields.io/cocoapods/p/WHCustomizeConstraint.svg?style=flat)](https://cocoapods.org/pods/WHCustomizeConstraint)
 
-## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
+## Features
+<ul>
+  <li>Swift 5 sweetness.</li>
+  <li>Everything you can do with Auto Layout in shorter way.</li>
+  <li>Constraints are active by default.</li>
+  <li>100% compatible with other Auto Layout code.</li>
+  <li>Set constraint priorities upon creation.</li>
+  <li>Constrain directly to the superview..</li>
+  <li>Stack views together with one line of code.</li>
+</ul>
 
 ## Installation
 
@@ -18,6 +24,51 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'WHCustomizeConstraint'
+```
+
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory. Furthermore, some useful examples described below.
+
+### Align Edges
+
+Attaching any `UI component` to its superview with `NSLayoutConstraint`:
+
+```ruby
+NSLayoutConstraint.activate([
+    view.topAnchor.constraint(equalTo: superview.topAnchor, constant: 0),
+    view.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: 0),
+    view.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: 0),
+    view.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: 0)
+])
+```
+
+with `WHCustomizeConstraint`:
+
+```ruby
+view.alignAllEdgesWithSuperview()
+```
+
+or:
+
+```ruby
+view.alignEdgesWithSuperview([.left, .right, .top, .bottom], constants: [0,0,0,0]) 
+```
+### Center In Superview
+
+Keeping a view`(`UI-component`)` to the center of its superview with `NSLayoutConstraint`:
+
+```ruby
+NSLayoutConstraint.activate([
+    view.centerXAnchor.constraint(equalTo: superview.centerXAnchor, constant: 0)
+    view.centerYAnchor.constraint(equalTo: superview.centerYAnchor, constant: 0)
+])
+```
+
+with `WHCustomizeConstraint`:
+
+```ruby
+view.centerInSuperView()
 ```
 
 ## Author
