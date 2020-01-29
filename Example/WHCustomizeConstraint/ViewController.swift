@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         firstLabel.centerInSuperView()
         secondLabel.centerHorizontallyInSuperview()
 //        secondLabel.topToBottom(firstLabel)
-        firstLabel.bottomToTop(secondLabel)
+        firstLabel.bottomToTop(secondLabel, constant: 10)
         
         let width = firstLabel.width(constant: 10)
         width.width(constant: 200)

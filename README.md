@@ -105,11 +105,17 @@ This constraints the top-anchor of `secondView` to the bottom-anchor of `firstVi
 
 ```ruby
 secondView.topToBottom(firstView)
+or
+secondView.topToBottom(firstView, constant: 10)
 ```
 This constraints the bottom-anchor of `firstView` to the top-anchor of `secondView`:
 
 ```ruby
 firstView.bottomToTop(secondView)
+
+or
+
+firstView.bottomToTop(secondView, constant: 10)
 ```
 
 ## Author
