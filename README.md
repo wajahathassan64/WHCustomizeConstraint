@@ -28,7 +28,7 @@ pod 'WHCustomizeConstraint'
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory. Further more here are some useful example describe below.
+To run the example project, clone the repo, and run `pod install` from the Example directory.  Furthermore here are some useful example describe below.
 
 ### Align Edges
 
