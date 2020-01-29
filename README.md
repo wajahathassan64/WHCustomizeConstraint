@@ -7,7 +7,7 @@
 
 
 ## Features
-sdasd asdas
+<li>Coffee - A brewed drink </li>
 
 ## Example
 
