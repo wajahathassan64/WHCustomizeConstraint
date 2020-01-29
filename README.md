@@ -21,7 +21,7 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory. Further more here are some usefull example describe below.
 
-## Align Edges
+# Align Edges
 
 Attaching any `UI component` to its superview with `NSLayoutConstraint`:
 
