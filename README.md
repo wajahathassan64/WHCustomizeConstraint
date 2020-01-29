@@ -7,7 +7,12 @@
 
 
 ## Features
-<li>Coffee - A brewed drink </li>
+<ul>
+  <li>Adele</li>
+  <li>Agnes</li>
+  <li>Billy</li>
+  <li>Bob</li>
+</ul>
 
 ## Example
 
