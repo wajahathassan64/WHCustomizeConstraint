@@ -43,7 +43,7 @@ view.alignAllEdgesWithSuperview()
 or:
 
 ```ruby
-view.alignEdgesWithSuperview([.left, .right, .top,. bottom], constants: [0,0,0,0]) 
+view.alignEdgesWithSuperview([.left, .right, .top, .bottom], constants: [0,0,0,0]) 
 ```
 
 ## Requirements
