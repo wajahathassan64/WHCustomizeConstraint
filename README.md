@@ -37,13 +37,13 @@ NSLayoutConstraint.activate([
 with `WHCustomizeConstraint`:
 
 ```ruby
-view.edgesToSuperView()
+view.alignAllEdgesWithSuperview()
 ```
 
 or:
 
 ```ruby
-view.edgesToSuperView(insets: .top(10) + .left(10))
+view.alignEdgesWithSuperview([.left, .right, .top,. bottom], constants: [0,0,0,0]) 
 ```
 
 ## Requirements
