@@ -112,9 +112,7 @@ This constraints the bottom-anchor of `firstView` to the top-anchor of `secondVi
 
 ```ruby
 firstView.bottomToTop(secondView)
-
 or
-
 firstView.bottomToTop(secondView, constant: 10)
 ```
 
