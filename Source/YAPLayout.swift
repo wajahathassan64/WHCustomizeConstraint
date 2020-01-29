@@ -141,11 +141,11 @@ public extension UIView {
         return pinEdge(.left, toEdge: .right, ofView: view, constant: constant, priority: priority)
     }
     
-    @discardableResult func toTopOf(_ view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult func bottomToTop(_ view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
         return pinEdge(.bottom, toEdge: .top, ofView: view, constantModifier, constant: constant, priority: priority)
     }
     
-    @discardableResult func toBottomOf(_ view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult func topToBottom(_ view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
         return pinEdge(.top, toEdge: .bottom, ofView: view, constantModifier, constant: constant, priority: priority)
     }
     

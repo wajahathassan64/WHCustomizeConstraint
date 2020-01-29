@@ -13,7 +13,7 @@
 <li>Constraints are active by default.</li>
 <li>100% compatible with other Auto Layout code.</li>
 <li>Set constraint priorities upon creation.</li>
-<li>Constrain directly to the superview..</li>
+<li>Constrain directly to the superview.</li>
 <li>Stack views together with one line of code.</li>
 </ul>
 
@@ -97,6 +97,19 @@ Attaching a view with superview SafeArea with padding using `WHCustomizeConstrai
 
 ```ruby
 view.alignEdgeWithSuperviewSafeArea(.top, constant: 10)
+```
+
+### Top to Bottom & Bottom to Top
+
+This constraints the top-anchor of `secondView` to the bottom-anchor of `firstView`:
+
+```ruby
+secondView.topToBottom(firstView)
+```
+This constraints the bottom-anchor of `firstView` to the top-anchor of `secondView`:
+
+```ruby
+firstView.bottomToTop(secondView)
 ```
 
 ## Author
