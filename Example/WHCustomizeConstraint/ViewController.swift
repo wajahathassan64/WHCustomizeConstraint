@@ -26,6 +26,7 @@ class ViewController: UIViewController {
 //        testLabel.centerVerticallyInSuperview()
         testLabel.alignEdgeWithSuperviewSafeArea(.top, constant: 10)
         testLabel.centerHorizontallyInSuperview()
+        testLabel.alignEdgeWithSuperviewSafeArea(.top, constant: 10)
         
         
     }

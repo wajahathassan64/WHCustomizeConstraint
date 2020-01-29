@@ -8,13 +8,13 @@
 
 ## Features
 <ul>
-  <li>Swift 5 sweetness.</li>
-  <li>Everything you can do with Auto Layout in shorter way.</li>
-  <li>Constraints are active by default.</li>
-  <li>100% compatible with other Auto Layout code.</li>
-  <li>Set constraint priorities upon creation.</li>
-  <li>Constrain directly to the superview..</li>
-  <li>Stack views together with one line of code.</li>
+<li>Swift 5 sweetness.</li>
+<li>Everything you can do with Auto Layout in shorter way.</li>
+<li>Constraints are active by default.</li>
+<li>100% compatible with other Auto Layout code.</li>
+<li>Set constraint priorities upon creation.</li>
+<li>Constrain directly to the superview..</li>
+<li>Stack views together with one line of code.</li>
 </ul>
 
 ## Installation
@@ -36,10 +36,10 @@ Attaching any `UI component` to its superview with `NSLayoutConstraint`:
 
 ```ruby
 NSLayoutConstraint.activate([
-    view.topAnchor.constraint(equalTo: superview.topAnchor, constant: 0),
-    view.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: 0),
-    view.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: 0),
-    view.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: 0)
+view.topAnchor.constraint(equalTo: superview.topAnchor, constant: 0),
+view.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: 0),
+view.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: 0),
+view.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: 0)
 ])
 ```
 
@@ -60,8 +60,8 @@ Keeping a view `(UI-component)` to the center of its superview with `NSLayoutCon
 
 ```ruby
 NSLayoutConstraint.activate([
-    view.centerXAnchor.constraint(equalTo: superview.centerXAnchor, constant: 0)
-    view.centerYAnchor.constraint(equalTo: superview.centerYAnchor, constant: 0)
+view.centerXAnchor.constraint(equalTo: superview.centerXAnchor, constant: 0)
+view.centerYAnchor.constraint(equalTo: superview.centerYAnchor, constant: 0)
 ])
 ```
 
@@ -71,11 +71,33 @@ with `WHCustomizeConstraint`:
 view.centerInSuperView()
 ```
 
-## Usage 
+# Usage 
 
-### Center in Superview
+## Constraints with Superview
 
-#### Center Horizontally in Superview
+### Center Horizontally in Superview
+
+Constraining a view `Horizontally` to the center of its supperview with `WHCustomizeConstraint`:
+
+```ruby
+view.centerHorizontallyInSuperview()
+```
+
+### Center Vertically in Superview
+
+Constraining a view `Vertically` to the center of its supperview with `WHCustomizeConstraint`:
+
+```ruby
+view.centerVerticallyInSuperview()
+```
+
+### Edge Superview Safe Area
+
+Attaching a view with superview SafeArea with padding using `WHCustomizeConstraint`:
+
+```ruby
+view.alignEdgeWithSuperviewSafeArea(.top, constant: 10)
+```
 
 ## Author
 
