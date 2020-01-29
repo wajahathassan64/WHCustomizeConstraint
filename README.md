@@ -36,11 +36,15 @@ NSLayoutConstraint.activate([
 
 with `TinyConstraints`:
 
-```ruby view.edgesToSuperView()```
+```ruby
+view.edgesToSuperView()
+```
 
 or:
 
-```ruby view.edgesToSuperView(insets: .top(10) + .left(10))```
+```ruby
+view.edgesToSuperView(insets: .top(10) + .left(10))
+```
 
 ## Requirements
 
