@@ -54,9 +54,9 @@ or:
 ```ruby
 view.alignEdgesWithSuperview([.left, .right, .top, .bottom], constants: [0,0,0,0]) 
 ```
-### Center In Superview
+### Center in Superview
 
-Keeping a view`(`UI-component`)` to the center of its superview with `NSLayoutConstraint`:
+Keeping a view `(UI-component)` to the center of its superview with `NSLayoutConstraint`:
 
 ```ruby
 NSLayoutConstraint.activate([
@@ -70,6 +70,12 @@ with `WHCustomizeConstraint`:
 ```ruby
 view.centerInSuperView()
 ```
+
+## Usage 
+
+### Center in Superview
+
+#### Center Horizontally in Superview
 
 ## Author
 

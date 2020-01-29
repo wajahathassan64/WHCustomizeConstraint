@@ -20,7 +20,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        testLabel.centerInSuperView()
+//        testLabel.centerInSuperView()
+        testLabel.text = "This is the test application"
+        view.addSubview(testLabel)
+//        testLabel.centerVerticallyInSuperview()
+        testLabel.alignEdgeWithSuperviewSafeArea(.top, constant: 10)
+        testLabel.centerHorizontallyInSuperview()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
