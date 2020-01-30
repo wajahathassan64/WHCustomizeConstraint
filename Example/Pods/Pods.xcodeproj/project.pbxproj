@@ -10,8 +10,8 @@
 		132C420B5BEB6C3ED4AE783C71A2FDB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		3BF7914015B6F54F2CDFB1FBB8D01608 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		3F1EEB441818233D8844A63BF347B7B7 /* Pods-WHCustomizeConstraint_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6784DFBCFE8B530945D102074951540D /* Pods-WHCustomizeConstraint_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		641A088E23E0BC60004A899E /* YAPLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641A088C23E0BC60004A899E /* YAPLayout.swift */; };
-		641A088F23E0BC60004A899E /* YAPLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641A088D23E0BC60004A899E /* YAPLayoutAttributes.swift */; };
+		641A088E23E0BC60004A899E /* LayoutKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641A088C23E0BC60004A899E /* LayoutKit.swift */; };
+		641A088F23E0BC60004A899E /* LayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641A088D23E0BC60004A899E /* LayoutAttributes.swift */; };
 		6EB43EE3CB52F08F118EAFD68BD2F4B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		9D1B01EBF1757A1B93B250F9A4A48C78 /* Pods-WHCustomizeConstraint_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BAAC18CDCCD28B4790D57112E4FA3FC /* Pods-WHCustomizeConstraint_Example-dummy.m */; };
 		9E84138B6C888C45EAA3828E6EB71516 /* WHCustomizeConstraint-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A7B7AC429F5DC399D96622840E93553A /* WHCustomizeConstraint-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -49,8 +49,8 @@
 		4014C5BC7B86566B4889D61CB55F3C04 /* Pods-WHCustomizeConstraint_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WHCustomizeConstraint_Tests-umbrella.h"; sourceTree = "<group>"; };
 		427456230710B47AF62251FAF021EE57 /* Pods-WHCustomizeConstraint_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WHCustomizeConstraint_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		4C6734C7F31F3010914EE1454356234D /* Pods_WHCustomizeConstraint_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WHCustomizeConstraint_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		641A088C23E0BC60004A899E /* YAPLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YAPLayout.swift; sourceTree = "<group>"; };
-		641A088D23E0BC60004A899E /* YAPLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YAPLayoutAttributes.swift; sourceTree = "<group>"; };
+		641A088C23E0BC60004A899E /* LayoutKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutKit.swift; sourceTree = "<group>"; };
+		641A088D23E0BC60004A899E /* LayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutAttributes.swift; sourceTree = "<group>"; };
 		6784DFBCFE8B530945D102074951540D /* Pods-WHCustomizeConstraint_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WHCustomizeConstraint_Example-umbrella.h"; sourceTree = "<group>"; };
 		6C625808EAD59DFE095D64ADB51F1BF6 /* Pods-WHCustomizeConstraint_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WHCustomizeConstraint_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7C21DF721C19216262E5BE6A2CE34525 /* Pods-WHCustomizeConstraint_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WHCustomizeConstraint_Example-Info.plist"; sourceTree = "<group>"; };
@@ -141,8 +141,8 @@
 		641A089023E0BFD4004A899E /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				641A088C23E0BC60004A899E /* YAPLayout.swift */,
-				641A088D23E0BC60004A899E /* YAPLayoutAttributes.swift */,
+				641A088C23E0BC60004A899E /* LayoutKit.swift */,
+				641A088D23E0BC60004A899E /* LayoutAttributes.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -400,8 +400,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				641A088F23E0BC60004A899E /* YAPLayoutAttributes.swift in Sources */,
-				641A088E23E0BC60004A899E /* YAPLayout.swift in Sources */,
+				641A088F23E0BC60004A899E /* LayoutAttributes.swift in Sources */,
+				641A088E23E0BC60004A899E /* LayoutKit.swift in Sources */,
 				F3B0AE09E4964A36797AF86A2F67A849 /* WHCustomizeConstraint-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

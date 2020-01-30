@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum YAPLayoutAxis {
+enum LayoutAxis {
     case vertical
     case horizontal
     case dimensions
 }
 
-public enum YAPLayoutEdge {
+public enum LayoutEdge {
     case left
     case right
     case top
@@ -31,8 +31,8 @@ public enum YAPLayoutEdge {
     case width
 }
 
-extension YAPLayoutEdge {
-    var axis: YAPLayoutAxis {
+extension LayoutEdge {
+    var axis: LayoutAxis {
         switch self {
         case .left, .right, .centerX, .safeAreaLeft, .safeAreaRight:
             return .horizontal
@@ -44,7 +44,7 @@ extension YAPLayoutEdge {
         }
     }
     
-    var safeAreaEdge: YAPLayoutEdge {
+    var safeAreaEdge: LayoutEdge {
         switch self {
         case .left, .safeAreaLeft:
             return .safeAreaLeft
@@ -60,14 +60,14 @@ extension YAPLayoutEdge {
     }
 }
 
-public enum YAPLayoutConstantModifier {
+public enum LayoutConstantModifier {
     case equalTo
     case lessThanOrEqualTo
     case greaterThanOrEqualTo
 }
 
 internal extension UIView {
-    func horizontalAnchor(_ edge: YAPLayoutEdge) -> NSLayoutXAxisAnchor {
+    func horizontalAnchor(_ edge: LayoutEdge) -> NSLayoutXAxisAnchor {
         switch edge {
         case .left:
             return leadingAnchor
@@ -84,7 +84,7 @@ internal extension UIView {
         }
     }
     
-    func verticalAnchor(_ edge: YAPLayoutEdge) -> NSLayoutYAxisAnchor {
+    func verticalAnchor(_ edge: LayoutEdge) -> NSLayoutYAxisAnchor {
         switch edge {
         case .top:
             return topAnchor
@@ -101,7 +101,7 @@ internal extension UIView {
         }
     }
     
-    func dimensionAnchor(_ edge: YAPLayoutEdge) -> NSLayoutDimension {
+    func dimensionAnchor(_ edge: LayoutEdge) -> NSLayoutDimension {
         switch edge {
         case .width:
             return widthAnchor
