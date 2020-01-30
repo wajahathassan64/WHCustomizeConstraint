@@ -11,6 +11,7 @@ import WHCustomizeConstraint
 
 class ViewController: UIViewController {
     
+    var constant: CGFloat = 10.0
     private lazy var firstLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -23,6 +24,17 @@ class ViewController: UIViewController {
         return label
     }()
     
+    private lazy var animateButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Animate", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,19 +44,25 @@ class ViewController: UIViewController {
         
         view.addSubview(firstLabel)
         view.addSubview(secondLabel)
+        view.addSubview(animateButton)
+        
+        firstLabel.topToBottom(firstLabel, constant: 100, isActive: false)
+        
+        animateButton.height(constant: 52)
+        animateButton.width(constant: 192)
+        animateButton.centerHorizontallyInSuperview()
+        animateButton.alignEdgeWithSuperviewSafeArea(.bottom, constant: 20)
         //        //        testLabel.centerVerticallyInSuperview()
         //        firstLabel.alignEdgeWithSuperviewSafeArea(.top, constant: 10)
         //        firstLabel.centerHorizontallyInSuperview()
         //        firstLabel.alignEdgeWithSuperviewSafeArea(.top, constant: 10)
         
-        firstLabel.centerInSuperView()
+        firstLabel.centerInSuperView(isActive: true)
         secondLabel.centerHorizontallyInSuperview()
-//        secondLabel.topToBottom(firstLabel)
-        firstLabel.bottomToTop(secondLabel, constant: 10)
+        //        secondLabel.topToBottom(firstLabel)
+        firstLabel.topToBottom(secondLabel, constant: constant)
         
-        let width = firstLabel.width(constant: 10)
-        width.width(constant: 200)
-//        let a = firstLabel.bottomToTop(secondLabel)
+        //        let a = firstLabel.bottomToTop(secondLabel)
         
         
     }
@@ -52,6 +70,14 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func buttonAction(sender: UIButton!) {
+      print("pressed")
+        constant = 100.0
+        UIViewPropertyAnimator(duration: 4, dampingRatio: 0.4) {
+            self.view.layoutIfNeeded()
+        }.startAnimation()
     }
     
 }

@@ -11,19 +11,19 @@ import Foundation
 // MARK: All edges constraints
 
 public extension UIView {
-    @discardableResult func alignEdges(_ edges: [YAPLayoutEdge], withView view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult func alignEdges(_ edges: [YAPLayoutEdge], withView view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
         
         for edge in edges {
-            _ = alignEdge(edge, withView: view, constantModifier, constant: constant, priority: priority)
+            _ = alignEdge(edge, withView: view, constantModifier, constant: constant, priority: priority, isActive: isActive)
         }
         
         return self
     }
     
-    @discardableResult func alignEdges(_ edges: [YAPLayoutEdge], withView view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constants: [CGFloat], priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult func alignEdges(_ edges: [YAPLayoutEdge], withView view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constants: [CGFloat], priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
         
         for edge in edges {
-            _ = alignEdge(edge, withView: view, constantModifier, constant: constants[edges.firstIndex(of: edge) ?? 0], priority: priority)
+            _ = alignEdge(edge, withView: view, constantModifier, constant: constants[edges.firstIndex(of: edge) ?? 0], priority: priority, isActive: isActive)
         }
         
         return self
@@ -33,7 +33,7 @@ public extension UIView {
 // MARK: Dimension constraints
 
 public extension UIView {
-    @discardableResult func width(_ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat, priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult func width(_ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
         
         let constraint: NSLayoutConstraint
         
@@ -47,11 +47,11 @@ public extension UIView {
         }
         
         constraint.priority = priority
-        constraint.isActive = true
+        constraint.isActive = isActive
         return self
     }
     
-    @discardableResult func height(_ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat, priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult func height(_ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
         
         let constraint: NSLayoutConstraint
         
@@ -65,107 +65,107 @@ public extension UIView {
         }
         
         constraint.priority = priority
-        constraint.isActive = true
+        constraint.isActive = isActive
         return self
     }
     
-    @discardableResult func height(with edge: YAPLayoutEdge, _ constantModifier: YAPLayoutConstantModifier = .equalTo, ofView view: UIView, multiplier: CGFloat = 1.0, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult func height(with edge: YAPLayoutEdge, _ constantModifier: YAPLayoutConstantModifier = .equalTo, ofView view: UIView, multiplier: CGFloat = 1.0, constant: CGFloat = 0, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
         
-        return pinDimensionEdge(.height, toEdge: edge, ofView: view, constantModifier, mutliplier: multiplier, constant: constant, priority: priority)
+        return pinDimensionEdge(.height, toEdge: edge, ofView: view, constantModifier, mutliplier: multiplier, constant: constant, priority: priority, isActive: isActive)
     }
     
-    @discardableResult func width(with edge: YAPLayoutEdge, _ constantModifier: YAPLayoutConstantModifier = .equalTo, ofView view: UIView, multiplier: CGFloat = 1.0, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult func width(with edge: YAPLayoutEdge, _ constantModifier: YAPLayoutConstantModifier = .equalTo, ofView view: UIView, multiplier: CGFloat = 1.0, constant: CGFloat = 0, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
         
-        return pinDimensionEdge(.width, toEdge: edge, ofView: view, constantModifier, mutliplier: multiplier, constant: constant, priority: priority)
+        return pinDimensionEdge(.width, toEdge: edge, ofView: view, constantModifier, mutliplier: multiplier, constant: constant, priority: priority, isActive: isActive)
     }
     
-    @discardableResult func aspectRatio(_ ratio: CGFloat = 1, _ priority:UILayoutPriority = .required) -> UIView {
-        return height(with: .width, ofView: self, multiplier: ratio,priority: priority)
+    @discardableResult func aspectRatio(_ ratio: CGFloat = 1, _ priority:UILayoutPriority = .required, isActive: Bool = true) -> UIView {
+        return height(with: .width, ofView: self, multiplier: ratio, priority: priority, isActive: isActive)
     }
 }
 
 // MARK: Constraints with superview
 
 public extension UIView {
-    @discardableResult func centerInSuperView(priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult func centerInSuperView(priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
         guard let superview = superview else { return self }
-        return alignCenterWith(superview)
+        return alignCenterWith(superview, isActive: isActive)
     }
     
-    @discardableResult func centerHorizontallyInSuperview(priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult func centerHorizontallyInSuperview(priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
         guard let superview = superview else { return self }
-        return horizontallyCenterWith(superview)
+        return horizontallyCenterWith(superview, isActive: isActive)
     }
     
-    @discardableResult func centerVerticallyInSuperview(priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult func centerVerticallyInSuperview(priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
         guard let superview = superview else { return self }
-        return verticallyCenterWith(superview)
+        return verticallyCenterWith(superview, isActive: isActive)
     }
     
-    @discardableResult func alignEdgeWithSuperview(_ edge: YAPLayoutEdge, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult func alignEdgeWithSuperview(_ edge: YAPLayoutEdge, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
         guard let superview = superview else { return self }
-        return alignEdge(edge, withView: superview, constantModifier, constant: constant, priority: priority)
+        return alignEdge(edge, withView: superview, constantModifier, constant: constant, priority: priority, isActive: isActive)
     }
     
-    @discardableResult func alignEdgeWithSuperviewSafeArea(_ edge: YAPLayoutEdge, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult func alignEdgeWithSuperviewSafeArea(_ edge: YAPLayoutEdge, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
         guard let superview = superview else { return self }
-        return pinEdge(edge, toEdge: edge.safeAreaEdge, ofView: superview, constantModifier, constant: constant, priority: priority)
+        return pinEdge(edge, toEdge: edge.safeAreaEdge, ofView: superview, constantModifier, constant: constant, priority: priority, isActive: isActive)
     }
     
-    @discardableResult func alignAllEdgesWithSuperview(_ constantModifier: YAPLayoutConstantModifier = .equalTo, edgeInsets: UIEdgeInsets = .zero, priority: UILayoutPriority = .required) -> UIView {
-        return alignEdgeWithSuperview(.left, constantModifier, constant: edgeInsets.left, priority: priority)
-            .alignEdgeWithSuperview(.top, constantModifier, constant: edgeInsets.top, priority: priority)
-            .alignEdgeWithSuperview(.right, constantModifier, constant: edgeInsets.right, priority: priority)
-            .alignEdgeWithSuperview(.bottom, constantModifier, constant: edgeInsets.bottom, priority: priority)
+    @discardableResult func alignAllEdgesWithSuperview(_ constantModifier: YAPLayoutConstantModifier = .equalTo, edgeInsets: UIEdgeInsets = .zero, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
+        return alignEdgeWithSuperview(.left, constantModifier, constant: edgeInsets.left, priority: priority, isActive: isActive)
+            .alignEdgeWithSuperview(.top, constantModifier, constant: edgeInsets.top, priority: priority, isActive: isActive)
+            .alignEdgeWithSuperview(.right, constantModifier, constant: edgeInsets.right, priority: priority, isActive: isActive)
+            .alignEdgeWithSuperview(.bottom, constantModifier, constant: edgeInsets.bottom, priority: priority, isActive: isActive)
     }
     
-    @discardableResult func alignEdgesWithSuperview(_ edges: [YAPLayoutEdge], _ constantModifier: YAPLayoutConstantModifier = .equalTo, constants: [CGFloat], priority: UILayoutPriority = .required) -> UIView {
-        guard let superview = superview else { return self }
-        
-        return alignEdges(edges, withView: superview, constantModifier, constants: constants, priority: priority)
-    }
-    
-    @discardableResult func alignEdgesWithSuperview(_ edges: [YAPLayoutEdge], _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult func alignEdgesWithSuperview(_ edges: [YAPLayoutEdge], _ constantModifier: YAPLayoutConstantModifier = .equalTo, constants: [CGFloat], priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
         guard let superview = superview else { return self }
         
-        return alignEdges(edges, withView: superview, constantModifier, constant: constant, priority: priority)
+        return alignEdges(edges, withView: superview, constantModifier, constants: constants, priority: priority, isActive: isActive)
+    }
+    
+    @discardableResult func alignEdgesWithSuperview(_ edges: [YAPLayoutEdge], _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
+        guard let superview = superview else { return self }
+        
+        return alignEdges(edges, withView: superview, constantModifier, constant: constant, priority: priority, isActive: isActive)
     }
 }
 
 public extension UIView {
-    @discardableResult func toLeftOf(_ view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
-        return pinEdge(.right, toEdge: .left, ofView: view, constantModifier, constant: constant, priority: priority)
+    @discardableResult func toLeftOf(_ view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
+        return pinEdge(.right, toEdge: .left, ofView: view, constantModifier, constant: constant, priority: priority, isActive: isActive)
     }
     
-    @discardableResult func toRightOf(_ view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
-        return pinEdge(.left, toEdge: .right, ofView: view, constant: constant, priority: priority)
+    @discardableResult func toRightOf(_ view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
+        return pinEdge(.left, toEdge: .right, ofView: view, constant: constant, priority: priority, isActive: isActive)
     }
     
-    @discardableResult func bottomToTop(_ view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
-        return pinEdge(.bottom, toEdge: .top, ofView: view, constantModifier, constant: constant, priority: priority)
+    @discardableResult func bottomToTop(_ view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
+        return pinEdge(.bottom, toEdge: .top, ofView: view, constantModifier, constant: constant, priority: priority, isActive: isActive)
     }
     
-    @discardableResult func topToBottom(_ view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
-        return pinEdge(.top, toEdge: .bottom, ofView: view, constantModifier, constant: constant, priority: priority)
+    @discardableResult func topToBottom(_ view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
+        return pinEdge(.top, toEdge: .bottom, ofView: view, constantModifier, constant: constant, priority: priority, isActive: isActive)
     }
     
-    @discardableResult func alignCenterWith(_ view: UIView, priority: UILayoutPriority = .required) -> UIView {
-        return horizontallyCenterWith(view).verticallyCenterWith(view)
+    @discardableResult func alignCenterWith(_ view: UIView, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
+        return horizontallyCenterWith(view, isActive: isActive).verticallyCenterWith(view, isActive: isActive)
     }
     
-    @discardableResult func horizontallyCenterWith(_ view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
-        return pinEdge(.centerX, toEdge: .centerX, ofView: view, constantModifier, constant: constant, priority: priority)
+    @discardableResult func horizontallyCenterWith(_ view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
+        return pinEdge(.centerX, toEdge: .centerX, ofView: view, constantModifier, constant: constant, priority: priority, isActive: isActive)
     }
     
-    @discardableResult func verticallyCenterWith(_ view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
-        return pinEdge(.centerY, toEdge: .centerY, ofView: view, constantModifier, constant: constant, priority: priority)
+    @discardableResult func verticallyCenterWith(_ view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
+        return pinEdge(.centerY, toEdge: .centerY, ofView: view, constantModifier, constant: constant, priority: priority, isActive: isActive)
     }
     
-    @discardableResult func alignEdge(_ edge: YAPLayoutEdge, withView view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required ) -> UIView {
-        return pinEdge(edge, toEdge: edge, ofView: view, constantModifier, constant: constant, priority: priority)
+    @discardableResult func alignEdge(_ edge: YAPLayoutEdge, withView view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
+        return pinEdge(edge, toEdge: edge, ofView: view, constantModifier, constant: constant, priority: priority, isActive: isActive)
     }
     
-    @discardableResult func pinEdge(_ edge1: YAPLayoutEdge, toEdge edge2: YAPLayoutEdge, ofView view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult func pinEdge(_ edge1: YAPLayoutEdge, toEdge edge2: YAPLayoutEdge, ofView view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
         
         if edge1.axis != edge2.axis {
             assertionFailure("YAPLayout Error: all edges of same constraint must be of same axis")
@@ -173,11 +173,11 @@ public extension UIView {
         
         switch edge1.axis {
         case .horizontal:
-            return pinHorizontalEdge(edge1, toEdge: edge2, ofView: view, constantModifier, constant: constant, priority: priority)
+            return pinHorizontalEdge(edge1, toEdge: edge2, ofView: view, constantModifier, constant: constant, priority: priority, isActive: isActive)
         case .vertical:
-            return pinVerticalEdge(edge1, toEdge: edge2, ofView: view, constantModifier, constant: constant, priority: priority)
+            return pinVerticalEdge(edge1, toEdge: edge2, ofView: view, constantModifier, constant: constant, priority: priority, isActive: isActive)
         case .dimensions:
-            return pinDimensionEdge(edge1, toEdge: edge2, ofView: view, constantModifier, constant: constant, priority: priority)
+            return pinDimensionEdge(edge1, toEdge: edge2, ofView: view, constantModifier, constant: constant, priority: priority, isActive: isActive)
         }
     }
 }
@@ -185,7 +185,7 @@ public extension UIView {
 // MARK: Private @discardableResult functions
 
 private extension UIView {
-    @discardableResult func pinHorizontalEdge(_ edge1: YAPLayoutEdge, toEdge edge2: YAPLayoutEdge, ofView view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult func pinHorizontalEdge(_ edge1: YAPLayoutEdge, toEdge edge2: YAPLayoutEdge, ofView view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
         
         let constraint: NSLayoutConstraint
         
@@ -210,12 +210,12 @@ private extension UIView {
         }
         
         constraint.priority = priority
-        constraint.isActive = true
+        constraint.isActive = isActive
         
         return self
     }
     
-    @discardableResult func pinVerticalEdge(_ edge1: YAPLayoutEdge, toEdge edge2: YAPLayoutEdge, ofView view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult func pinVerticalEdge(_ edge1: YAPLayoutEdge, toEdge edge2: YAPLayoutEdge, ofView view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, constant: CGFloat = 0, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
         
         let constraint: NSLayoutConstraint
         
@@ -244,12 +244,12 @@ private extension UIView {
         }
         
         constraint.priority = priority
-        constraint.isActive = true
+        constraint.isActive = isActive
         
         return self
     }
     
-    @discardableResult func pinDimensionEdge(_ edge1: YAPLayoutEdge, toEdge edge2: YAPLayoutEdge, ofView view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, mutliplier: CGFloat = 1, constant: CGFloat = 0, priority: UILayoutPriority = .required) -> UIView {
+    @discardableResult func pinDimensionEdge(_ edge1: YAPLayoutEdge, toEdge edge2: YAPLayoutEdge, ofView view: UIView, _ constantModifier: YAPLayoutConstantModifier = .equalTo, mutliplier: CGFloat = 1, constant: CGFloat = 0, priority: UILayoutPriority = .required, isActive: Bool = true) -> UIView {
         
         let constraint: NSLayoutConstraint
         
@@ -263,7 +263,7 @@ private extension UIView {
         }
         
         constraint.priority = priority
-        constraint.isActive = true
+        constraint.isActive = isActive
         
         return self
     }

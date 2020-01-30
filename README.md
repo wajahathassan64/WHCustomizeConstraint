@@ -11,10 +11,9 @@
 <li>Swift 5 sweetness.</li>
 <li>Everything you can do with Auto Layout in shorter way.</li>
 <li>Constraints are active by default.</li>
-<li>100% compatible with other Auto Layout code.</li>
+<li>Compatible with other Auto Layout code.</li>
 <li>Set constraint priorities upon creation.</li>
 <li>Constrain directly to the superview.</li>
-<li>Stack views together with one line of code.</li>
 </ul>
 
 ## Installation
