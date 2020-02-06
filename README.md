@@ -25,6 +25,12 @@ it, simply add the following line to your Podfile:
 pod 'WHCustomizeConstraint'
 ```
 
+WHCustomizeConstraint is available through [Carthage](https://github.com/Carthage/Carthage). To install it, simply add the following line to your Cartfile:
+
+```ruby
+github 'wajahathassan64/WHCustomizeConstraint'
+```
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory. Furthermore, some useful examples described below.
